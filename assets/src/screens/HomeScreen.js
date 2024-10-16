@@ -3,24 +3,23 @@ import { Image, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
   return (
-    
     <View style={styles.container}>
-
-        
       <Text style={styles.title}>Bienvenido</Text>
 
-      {/* Botón para navegar a la Lista de Tareas */}
+      {/* Botón para navegar a la pantalla de Iniciar Sesión */}
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('TaskList')}
+        onPress={() => navigation.navigate('LoginScreen')}
       >
         <Text style={styles.buttonText}>Iniciar sesión</Text>
       </TouchableOpacity>
 
-      {/* Botón para navegar a la pantalla de Crear Tarea */}
-    
-        <Text style={styles.Text}>¿No tienes cuenta?  Registrate aqui</Text>
-    
+      {/* Texto y botón para navegar a la pantalla de Registro */}
+      <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}>
+        <Text style={[styles.text, { fontWeight: 'bold' }]}>
+          ¿No tienes cuenta? Regístrate aquí
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -40,7 +39,7 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   button: {
-    backgroundColor: '#87CEFA', // Azul cielo
+    backgroundColor: '#87CEFA',
     paddingVertical: 15,
     paddingHorizontal: 40,
     borderRadius: 25,
@@ -50,6 +49,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#fff',
     fontWeight: 'bold',
+  },
+  text: {
+    marginTop: 20,
+    fontSize: 16,
+    color: '#1E90FF', // Cambia el color a azul
   },
 });
 
